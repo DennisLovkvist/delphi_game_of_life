@@ -155,6 +155,7 @@ end;
 var cells : array[0..399] of Integer;
 var cells_next : array[0..399] of Integer;
 var i:Integer;
+var generation:Integer;
 begin
   for i := 0 to 399 do  
     begin
@@ -175,8 +176,12 @@ begin
   begin
     
   Step(cells,cells_next);
+  generation := generation + 1;
   PrintBuffered(cells);
-  WriteLn('___________________________________________');  
+  Write('_____________ ');  
+  Write('Generation ');  
+  Write(generation);  
+  WriteLn(' _____________');  
   Sleep(500);
   end;
   
